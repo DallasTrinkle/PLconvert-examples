@@ -1,0 +1,12 @@
+{
+    "title": "Finding reaction forces for a statically indeterminate problem under single axial load",
+    "topic": "Chapter 9",
+    "tags": [
+        "ch9",
+        "axial load",
+	"statically indeterminate",
+	"quiz"
+    ],
+    "clientFiles": ["client.js", "question.html", "answer.html", "ch09-bar-load.png"],
+    "type": "Calculation" 
+}

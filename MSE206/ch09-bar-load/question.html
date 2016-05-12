@@ -1,0 +1,18 @@
+<p>
+  A $L= {{params.L}}$ cm long bar, with uniform cross-sectional area ${{params.A}}\times 10^{-4}$ m$^2$, with a Young's modulus of {{params.E}} GPa, Poisson's ratio of {{params.nu}} is fit between two fixed fixed constraints, at a distance of {{params.L}} cm. If the bar experiences a load of $F={{params.F}}$ kN located $x= {{params.x}}$ cm to the right of end $A$, what is the magnitude of the reaction force at $A$?
+<p>
+  <img src="<% print(questionFile("ch09-bar-load.png")) %>" width="400px" class="img-responsive center-block" />
+<p>
+  <pre>
+    MATLAB input variables:
+    format shortEng
+    L = {{params.L}}E-2
+    A = {{params.A}}E-4
+    E = {{params.E}}E9
+    nu = {{params.nu}}
+    x = {{params.x}}E-2
+    F = {{params.F}}E3
+  </pre>
+<p>
+  reaction force magnitude at $A$ = <input data-instavalue="submittedAnswer.FA" /> kN.
+</p>

@@ -1,0 +1,14 @@
+<p>
+  A beam with constant flexural rigidity $EI$ of length $L$ = {{params.L}} m has fixed supports at both ends; it experiences the constant distributed load of $w$ = {{params.w}} N/m. What is the magnitude of the reaction moment at the left support?
+<p>
+  <img src="<% print(questionFile("ch16-cantilever.png")) %>" width="400px" class="img-responsive center-block" />
+<p>
+  <pre>
+    MATLAB input variables:
+    format shortEng
+    L = {{params.L}}
+    w = {{params.w}}
+  </pre>
+<p>
+  reaction moment magnitude at left end = <input data-instavalue="submittedAnswer.M" /> $\text{N}\cdot\text{m}$.
+</p>

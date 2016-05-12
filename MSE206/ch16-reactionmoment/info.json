@@ -1,0 +1,12 @@
+{
+    "title": "Computing reaction moment for a statically indeterminate beam under distributed load",
+    "topic": "Chapter 16",
+    "tags": [
+        "ch16",
+        "reaction moment",
+	"statically indeterminate",
+	"quiz"
+    ],
+    "clientFiles": ["client.js", "question.html", "answer.html", "ch16-cantilever.png"],
+    "type": "Calculation"
+}

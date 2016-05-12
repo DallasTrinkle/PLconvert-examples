@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "ch09",
+        "bar-load"
+    ],
+    "type": "MultipleChoice",
+    "options": {
+        "incorrectAnswers": [
+            "20 kN",
+            "60 kN",
+            "120 kN",
+            "240 kN"
+        ],
+        "numberAnswers": 5,
+        "text": "\\\\\\begin{minipage}[t]{3in}A 300 mm beam with uniform cross-sectional area 30 mm$^2$ and Young's modulus 60 GPa is constrained to not displace at the ends $A$ and $B$; it experiences a 60 kN load to the left, 100 mm from $B$. What is the reaction force at $B$?\\end{minipage}\\quad\\begin{minipage}[t]{3in}\\vspace{-24pt}<img src=\"<% print(questionFile(\"ch09-bar-load-60.png\")) %>\" width=\"600px\" class=\"img-responsive center-block\" />\n\\end{minipage}\\vspace{-12pt}",
+        "correctAnswers": [
+            "40 kN"
+        ]
+    },
+    "title": "bar-load",
+    "clientFiles": [
+        "client.js",
+        "ch09-bar-load-60.png"
+    ],
+    "topic": "ch09"
+}

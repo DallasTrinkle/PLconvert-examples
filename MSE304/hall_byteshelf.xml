@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stdhw weight="1" tags="">
+  <title>Hall Probe Sensor</title>
+  <code>thickness = rand(800,1500,10)
+width = rand(200,800,15)
+length = rand(50,500,20)
+current = rand(70,150,8)
+mat = 0.19697
+rho = 19300
+density_electron = rho*(6.022E23)/mat
+volthall = 1E-6
+bfieldhall = (volthall*thickness*1E-9*1.602E-19*density_electron)/(current*1E-3)
+</code>
+  <problemsetup>
+    <p>Consider a rectangular gold strip (thickness $D$={thickness} nm, length $L$={length} mm, and width $W$={width} μm) that is used as a Hall probe sensor on an insulating substrate. A current $I$={current} mA is passed through the probe along $L$, perpendicular to the cross-sectional area $WD$. The face $WL$ is exposed to the magnetic field $B$ that will be measured. A voltmeter is connected across the width $W$ to read the Hall voltage $V_H$. This setup is visualized here:</p>
+    <p>
+      <img alt="" src="@MEDIA_DIR/UserData/764b22b5-cc94-d193-d77e-7cba1c6d6f15/hall_probe.png" style="width: 450px;" />
+    </p>
+  </problemsetup>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>Determine the electron concentration $n$ for gold using its atomic mass $M_{at}$=196.97 g/mol and its density 19.3 g/cm$^3$.</p>
+    </questionprompt>
+    <answer>{density_electron}/1E28</answer>
+    <units>$10^{28}$ m$^{-3}$</units>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>
+        <span style="line-height: 20.7999992370605px;">Now derive an equation for the Hall voltage in this setup. What is the magnetic field that can be recorded per μV of Hall voltage?</span>
+      </p>
+    </questionprompt>
+    <answer>{bfieldhall}</answer>
+    <units>T</units>
+    <correctFeedback>Right answer !</correctFeedback>
+    <help>
+      <p>Use $V_H$=1 μV  since you are computing B per μV.</p>
+    </help>
+    <solution>
+      <p>The Hall voltage follows from $V_H=\frac{I\cdot B}{D e n}$. Solving for B leads to the result.</p>
+    </solution>
+  </question>
+</stdhw>

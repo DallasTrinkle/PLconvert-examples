@@ -1,0 +1,7 @@
+{
+    "title": "Hydrogen model: Binding energy of defects in semiconductors",
+    "topic": "Semiconductors",
+    "tags": ["semiconductors", "defects", "hydrogen model"],
+    "clientFiles": ["client.js", "question.html", "answer.html"],
+    "type": "Calculation"
+}

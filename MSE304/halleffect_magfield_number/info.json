@@ -1,0 +1,7 @@
+{
+    "title": "Voltage and magnetic field in a Hall probe",
+    "topic": "Hall effect",
+    "tags": ["Hall effect", "Hall voltage"],
+    "clientFiles": ["client.js", "question.html", "answer.html", "hall_picture.png"],
+    "type": "Calculation"
+}

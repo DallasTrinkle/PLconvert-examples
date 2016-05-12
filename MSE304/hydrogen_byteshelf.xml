@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stdhw weight="1" tags="">
+  <title>Hydrogenic "Atom" in Silicon</title>
+  <code>eps_rel = 11.4 -.2 + rand(0,12,2)*.1
+m_eff = 1.06 + rand(-10,10,5)*.001
+E0 = 13.6021*m_eff*Pow(eps_rel,-2)
+n = rand(2,8,12)
+n2 = rand(2,3,4)
+n1 = n2 + rand(1,4,6)
+transitionenergy = rRound(E0*(Pow(n2,-2) - Pow(n1,-2)), 4)
+hc = 1239.8317
+</code>
+  <problemsetup>
+    <p>
+      <br />
+You have a sample of crystalline silicon (Si), lightly doped with phosphorus (P) at a concentration of one part per billion, so on average, the dopant atoms are very far apart and do not interact with each other. Phosphorus has one more valence electron than Si, which does not fit ''nicely'' into the crystalline lattice, and one extra proton, giving its nucleus an extra unit of charge compared to the surrounding Si atoms. Your experimental setup cools the sample enough that the dynamics of Si atoms and the bonded electrons do not influence the behavior of the dopant. You look up the value of the dielectric constant of Si and find a value of $\epsilon_{Si} =$ {eps_rel} $\epsilon_0$. You find the effective mass of an electron in Si to be $m_e^* =$ {m_eff} $m_e$. (These numbers may or may not be the same as numbers reported online).</p>
+    <p>Recall that the energy levels of the hydrogen atom in vacuum are given by </p>
+    <p>$$E_n = -\frac{m_e e^4}{2\hbar^2 (4\pi\epsilon_0)^2} \frac{1}{n^2}$$</p>
+  </problemsetup>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>Using this model, adjusting parameters for silicon, what energy would you have to give a dopant electron in your sample to remove it from its phosphorous ion?</p>
+    </questionprompt>
+    <answer>{E0}</answer>
+    <units>eV</units>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>On average, how far do you expect a dopant electron to be from its P atom in its ground state? Recall that the Bohr radius of hydrogen is given by </p>
+      <p>$$a_B = 4\pi\epsilon_0\frac{\hbar^2}{m_e e^2}$$</p>
+    </questionprompt>
+    <answer>{eps_rel}/{m_eff}*0.52926</answer>
+    <units>angstroms</units>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>Suppose you want to excite a dopant electron from its ground state to the ''hydrogen-like'' $n=${n} excited state. Light of what wave length should you shine on your sample?</p>
+    </questionprompt>
+    <answer>hc/(E0*(1 - Pow(n,-2)))</answer>
+    <units>nm</units>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>You shine light on your sample with a wave length short enough to remove the electron from the donor. After a while the electron finds the donor again and starts relaxing back into its donor-bound ground state. One of the emission lines that you observe is at an energy of {transitionenergy} eV. This corresponds to a transition into $n$={n2}. What level did the electron transition from?</p>
+    </questionprompt>
+    <answer>{n1}</answer>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+</stdhw>

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "ch16",
+        "reactionmoment"
+    ],
+    "type": "MultipleChoice",
+    "options": {
+        "incorrectAnswers": [
+            "$4\\text{ kN}\\cdot\\text{m}$",
+            "$8\\text{ kN}\\cdot\\text{m}$",
+            "$16\\text{ kN}\\cdot\\text{m}$",
+            "0"
+        ],
+        "numberAnswers": 5,
+        "text": "\\\\\\begin{minipage}[t]{3in}A $L=4\\text{ m}$ beam with constant flexural rigidity $EI$ is fixed to not rotate at each end as shown. What is the magnitude of the reaction moment at either end if the load $P = 4\\text{ kN}$?\\end{minipage}\\quad\\begin{minipage}[t]{3in}\\vspace{-12pt}<img src=\"<% print(questionFile(\"ch16-reactionmoment.png\")) %>\" width=\"600px\" class=\"img-responsive center-block\" />\n\\end{minipage}\\vspace{-24pt}",
+        "correctAnswers": [
+            "$2\\text{ kN}\\cdot\\text{m}$"
+        ]
+    },
+    "title": "reactionmoment",
+    "clientFiles": [
+        "client.js",
+        "ch16-reactionmoment.png"
+    ],
+    "topic": "ch16"
+}

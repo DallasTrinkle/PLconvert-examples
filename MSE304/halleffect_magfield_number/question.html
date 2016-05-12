@@ -1,0 +1,19 @@
+<p>
+<img src="<% print(questionFile("hall_picture.png")) %>" width="350px"
+class="img-responsive center-block"/>
+<br>
+Consider a rectangular strip (thickness $D = {{params.thickness}}
+$ nm, length $L = {{params.length}} $ mm, and width $W =
+{{params.width}} ~\mu$m) that is used as a Hall probe sensor on an
+insulating substrate. The material used here has an electron
+concentration of {{params.atpervol}} $\cdot 10^{22}$ electrons/cm$^{3}$. A current $I = {{params.current}}$ mA is passed
+through the probe along $L$, perpendicular to the cross-sectional area
+$WD$. The magnetic field B is measured in the $z$ direction. A voltmeter is connected across the width $W$ to read the
+Hall voltage $V_H$.
+</p>
+<p>
+How large of a magnetic field do you need to measure a Hall voltage of {{params.voltage}} $\mu$V?
+</p>
+<p>
+Your solution: <input data-instavalue="submittedAnswer.asval" /> T.
+</p>
