@@ -9,6 +9,7 @@ The `randexam-questions` directory contains latex files for individual questions
 * ch17.constraints.tex
 
 *This should be done with an automated script, not by hand.* Please write a script that
+
 1. Given a source directory (`randexm-questions`) and a target directory,
 2. Converts each tex file in the source directory into a corresponding question in the target directory (with possible variants for each variants) into an `info.json` file, including correct access lists for images,
 3. Copies over images into the directory.
