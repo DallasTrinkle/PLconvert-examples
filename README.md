@@ -26,5 +26,6 @@ The `xml` files are inputs for ByteShelf. These have been converted by hand into
 The primary files that need to be constructed are `server.js` (which will create the variables for the question and answers); `info.json` contains information about files that are needed to be accessed. The two HTML files, `question.html` and `answer.html` include references to the variables.
 
 **Example to be converted:**
-* ??
+* LJ_byteshelf.xml
 
+*This can be done by hand, but you may want to use a script to do some initial conversion.*

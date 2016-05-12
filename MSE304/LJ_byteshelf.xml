@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stdhw weight="1" tags="">
+  <title>Lennard-Jones Potential</title>
+  <code>boltzmann = 8.617e-5
+epsi = rRound(boltzmann * rand(900, 2000, 45)/10, 3)
+sig = rand(100, 500, 63)/100
+mindist = 2^(1/6)*sig
+innerdist = 0.9*mindist
+outerdist = 1.1*mindist
+innerpot = 4*epsi*((sig/innerdist)^12-(sig/innerdist)^6)
+outerpot = 4*epsi*((sig/outerdist)^12-(sig/outerdist)^6)
+innerforce = -4*epsi*(-12*sig^12/innerdist^13 + 6*sig^6/innerdist^7)*1E10*1.602E-19
+outerforce = -4*epsi*(-12*sig^12/outerdist^13 + 6*sig^6/outerdist^7)*1E10*1.602E-19
+</code>
+  <problemsetup>
+    <p>As you have learned in class, the potential that an atom sees when it encounters another atom is defined by a combination of attractive forces and repulsive forces from the repulsion of the electron clouds due to the Pauli exclusion principle. Rather than explicitly solving the Schrödinger Equation, the <em>Lennard-Jones</em> potential provides a reasonable approximation for the case of neutral atoms or molecules that experience only van der Waals forces (or dispersion forces) for attraction.</p>
+    <p>The Lennard-Jones potential is given by $V(r) = 4 \epsilon \left[ ( \frac{\sigma}{r} )^{12} - (\frac{\sigma}{r})^6 \right]$. Here, $r$ is the distance between atoms/molecules, $\epsilon$ is related to the depth of the potential, and $\sigma$ is related to the equilibrium bond length.</p>
+    <p>This homework problem will illustrate the Lennard-Jones potential for you. Let $\epsilon = ${epsi} eV and $\sigma = ${sig} å.</p>
+  </problemsetup>
+  <question type="radio" feedbacktype="afterdeadline" weight="1">
+    <questionprompt>
+      <p>Visualize the potential. Which of the two terms is due to the Pauli exclusion principle?</p>
+    </questionprompt>
+    <correctFeedback>Right answer !</correctFeedback>
+    <solution>
+      <p>The Pauli exclusion principle governs the potential at small $r$, i.e., when the electron clouds overlap. When $r$ is small, $r^{12}$ is much smaller than $r^{6}$. Hence, $1/r^{12}$ is much larger than $1/r^6$ and dominates for small $r$.</p>
+    </solution>
+    <answerchoice iscorrect="true">
+      <text>The one proportional to $1/r^{12}$.</text>
+    </answerchoice>
+    <answerchoice iscorrect="false">
+      <text>The one proportional to $1/r^{6}$.</text>
+    </answerchoice>
+    <answerchoice iscorrect="false">
+      <text>No individual term. It is their combination.</text>
+    </answerchoice>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>At what point $r$ (besides infinity) does the potential vanish?</p>
+    </questionprompt>
+    <answer>{sig}</answer>
+    <units>å</units>
+    <correctFeedback>
+      <p>Right answer !</p>
+    </correctFeedback>
+    <solution>
+      <p>If you set $r = \sigma$, then you find that both terms inside become 1, so the attractive and repulsive forces cancel out.</p>
+    </solution>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>At what position $r_{\rm min}$ is $V(r)$ globally minimal?</p>
+    </questionprompt>
+    <answer>{mindist}</answer>
+    <units>å</units>
+    <correctFeedback>Right answer !</correctFeedback>
+    <help>
+      <p>How do you find the minimum of a mathematical function?</p>
+    </help>
+    <solution>
+      <p>$\frac{dV(r)}{dr} =4\epsilon\left[-12\frac{\sigma^{12}}{r^{13}} + 6\frac{\sigma^6}{r^7}\right]$</p>
+      <p>Setting this to 0 gives you $r = 2^{1/6} \sigma$.</p>
+    </solution>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>What is the value of $V(r)$ at this minimum?</p>
+    </questionprompt>
+    <answer>-{epsi}</answer>
+    <units>eV</units>
+    <correctFeedback>Right answer !</correctFeedback>
+    <solution>
+      <p>Just put $r$=$2^{1/6} \sigma$=$2^{1/6}\cdot $ {sigma} into $V(r)$, this gives $-\epsilon$.</p>
+    </solution>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>Now assume that an external force pushes two atoms closer together, such that $r$=$0.9\cdot r_{\rm min}$ ($r_{\rm min}$ as in Question 3). By how much does the potential energy increase?</p>
+    </questionprompt>
+    <answer>{innerpot}+{epsi}</answer>
+    <units>eV</units>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>How large is the increase in potential energy if the external force pulls the two atoms apart such that $r=1.1\cdot r_{\rm min}$?</p>
+    </questionprompt>
+    <answer>{outerpot}+{epsi}</answer>
+    <units>eV</units>
+    <correctFeedback>Right answer !</correctFeedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>
+        <span style="line-height: 20.7999992370605px;">What is the value (and sign) of the force acting on the system at $r = 0.9 \cdot r_{\rm min}$?</span>
+      </p>
+    </questionprompt>
+    <answer>{innerforce}</answer>
+    <units>N</units>
+    <correctFeedback>Right answer !</correctFeedback>
+    <solution>
+      <p>
+        <span style="line-height: 20.7999992370605px;">The force follows from $F(r)=-\frac{d}{dr}V(r)$.</span>
+      </p>
+    </solution>
+    <feedback answer="-{innerforce}">
+      <message>
+        <p>
+          <span style="line-height: 20.7999992370605px;">Is the force equal to $\frac{dV}{dr}$? Draw some potentials out and think about what the sign of the force must be at different areas of the potential.</span>
+        </p>
+      </message>
+    </feedback>
+  </question>
+  <question type="freeresponse" feedbacktype="immediate" weight="1">
+    <questionprompt>
+      <p>
+        <span style="line-height: 20.7999992370605px;">What is the value (and sign) of that force at $r = 1.1 \cdot r_{\rm min}$?</span>
+      </p>
+    </questionprompt>
+    <answer>{outerforce}</answer>
+    <units>N</units>
+    <correctFeedback>Right answer !</correctFeedback>
+    <solution>
+      <p>
+        <span style="line-height: 20.7999992370605px;">The force follows from $F(r)=-\frac{d}{dr}V(r)$.</span>
+      </p>
+    </solution>
+    <feedback answer="-{outerforce}">
+      <message>
+        <p>
+          <span style="line-height: 20.7999992370605px;">Is the force equal to $\frac{dV}{dr}$? Draw some potentials out and think about what the sign of the force must be at different areas of the potential.</span>
+        </p>
+      </message>
+    </feedback>
+  </question>
+</stdhw>
